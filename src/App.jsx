@@ -12,7 +12,7 @@ function App() {
   const [pizzas, setPizzas] = useState([]);
 
   useEffect(() => {
-    fetch("../public/pizzas.json")
+    fetch(process.env.PUBLIC_URL + "../public/pizzas.json")
     .then((res) => res.json())
     .then((data) => setPizzas(data));
   }, []);
